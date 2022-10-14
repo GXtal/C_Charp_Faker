@@ -10,7 +10,9 @@ namespace FakerLib
     {
         private List<IValueGenerator> generators;
         private GeneratorContext context;
-        private static object? GetDefaultValue(Type t)
+
+
+        private object? GetDefaultValue(Type t)
         {
             if (t.IsValueType)
                 return Activator.CreateInstance(t);
@@ -33,12 +35,9 @@ namespace FakerLib
             }
             return GetDefaultValue(t);
         }
-
-
         public Faker()
         {
-            generators = new List<IValueGenerator>();
-            
+            generators = new List<IValueGenerator>();            
             generators.Add(new IntGenerator());
             generators.Add(new BoolGenerator());
             context = new GeneratorContext(new Random(), this);

@@ -8,6 +8,7 @@ namespace ConsoleFaker
             var f = new Faker();
             int a = f.Create<int>();
             bool b = f.Create<bool>();
+            Faker c = f.Create<Faker>();
         }
     }
 }
