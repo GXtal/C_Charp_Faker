@@ -1,4 +1,5 @@
 ﻿using FakerLib;
+using TestClasses;
 namespace ConsoleFaker
 {
     internal class Program
@@ -8,7 +9,9 @@ namespace ConsoleFaker
             var f = new Faker();
             int a = f.Create<int>();
             bool b = f.Create<bool>();
-            Faker c = f.Create<Faker>();
+            f.Create<string>();
+            Human human = f.Create<Human>();            
+            InHuman inHuman = f.Create<InHuman>();
         }
     }
 }

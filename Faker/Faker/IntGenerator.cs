@@ -19,12 +19,11 @@ namespace FakerLib
 
         public object Generate(Type typeToGenerate, GeneratorContext context)
         {
-
             if (CanGenerate(typeToGenerate))
             {
                 return context.Random.Next();
             }
-            return null;                      
+            return 0;                   
 
         }
     }

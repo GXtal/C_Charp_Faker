@@ -10,7 +10,7 @@ namespace FakerLib
     {
         public bool CanGenerate(Type type)
         {
-            if((type.IsClass)&&(!type.IsGenericType))
+            if((type.IsClass)&&(!type.IsGenericType)&&(type!=typeof(string)))
             {
                 return true;
             }
@@ -21,8 +21,64 @@ namespace FakerLib
         {
             if (CanGenerate(typeToGenerate))
             {
-                typeToGenerate.GetFields();
+                
+                var allFields=typeToGenerate.GetFields();
+                var allProps=typeToGenerate.GetProperties();
+
                 var allConstructors = typeToGenerate.GetConstructors();
+
+                object res=null;
+                Array.Sort(allConstructors, new ConstructorComparer());
+                Array.Reverse(allConstructors);
+
+                foreach(var constructor in allConstructors)
+                {
+                    try
+                    {
+                        var ConstructorParametrs = constructor.GetParameters();
+                        List<object> preparParams = new List<object>();
+                        foreach(var param in ConstructorParametrs)
+                        {
+                            preparParams.Add(context.Faker.Create(param.ParameterType));
+                        }
+                        res = constructor.Invoke(preparParams.ToArray());
+
+                        break;
+                    }
+                    catch
+                    {
+
+                    }                    
+                }
+
+                if(res!=null)
+                {
+                    foreach(var property in allProps )
+                    {
+                        try
+                        {
+                            property.SetValue(res, context.Faker.Create(property.PropertyType));
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+
+                    foreach(var field in allFields)
+                    {
+                        try
+                        {
+                            field.SetValue(res, context.Faker.Create(field.FieldType));
+                        }
+                        catch
+                        {
+
+                        }
+
+                    }
+                    return res;
+                }
             }
             return null;
         }
