@@ -10,7 +10,7 @@ namespace FakerLib
     {
         public bool CanGenerate(Type type)
         {
-            if((type.IsClass)&&(!type.IsGenericType)&&(type!=typeof(string)))
+            if((type.IsClass)&&(!type.IsGenericType)&&(!type.IsArray))
             {
                 return true;
             }

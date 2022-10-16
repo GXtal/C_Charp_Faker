@@ -21,7 +21,7 @@ namespace FakerLib
         {
             if (CanGenerate(typeToGenerate))
             {
-                return context.Random.Next(0, Byte.MaxValue);
+                return ((byte)context.Random.Next(byte.MinValue, byte.MaxValue+1));
             }
             return null;
         }

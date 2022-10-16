@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace FakerLib
 {
-    public class IntGenerator : IValueGenerator
+    public class ShortGenerator : IValueGenerator
     {
         public bool CanGenerate(Type type)
         {
-            if (type == typeof(int))
+            if (type == typeof(short))
             {
                 return true;
             }
@@ -21,10 +21,9 @@ namespace FakerLib
         {
             if (CanGenerate(typeToGenerate))
             {
-                return context.Random.Next(int.MinValue,int.MaxValue);
-                
+                return (short)context.Random.Next(short.MinValue,short.MaxValue+1);
             }
-            return null;                   
+            return null;
 
         }
     }

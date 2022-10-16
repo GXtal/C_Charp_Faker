@@ -6,12 +6,16 @@ namespace ConsoleFaker
     {
         static void Main(string[] args)
         {
-            var f = new Faker();
-            int a = f.Create<int>();
-            bool b = f.Create<bool>();
-            f.Create<string>();
-            Human human = f.Create<Human>();            
-            InHuman inHuman = f.Create<InHuman>();
+
+            Faker faker = new Faker();
+            /*double a = faker.Create<double>();
+            byte b = faker.Create<byte>();
+            char c = faker.Create<char>();
+            short s = faker.Create<short>();
+            long l = faker.Create<long>();
+            string s2 = faker.Create<string>();*/
+            int[] ints = faker.Create<int[]>();
+            int[,] ints2 = faker.Create<int[,]>(); 
         }
     }
 }
