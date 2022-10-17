@@ -17,8 +17,12 @@ namespace FakerLib
         // но может быть удобно и в некоторых других случаях.
         public Faker Faker { get; }
 
+        public List<Type> TypesChain;
+        public List<object> ObjectChain;
         public GeneratorContext(Random random, Faker faker)
         {
+            TypesChain = new List<Type>();
+            ObjectChain = new List<object>();
             Random = random;
             Faker = faker;
         }

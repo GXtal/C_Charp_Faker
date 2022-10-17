@@ -21,7 +21,7 @@ namespace FakerLib
         {
             if (CanGenerate(typeToGenerate))
             {
-                return DoubleRandom(double.MinValue, double.MaxValue, context.Random);
+                return DoubleRandom(context.Random);
                 //return DoubleRandom(0, 10, context.Random);
             }
 
@@ -29,13 +29,12 @@ namespace FakerLib
 
         }
 
-        private double DoubleRandom(double min, double max, Random rand)
+        private double DoubleRandom(Random rand)
         {
-            if(Double.IsInfinity(max-min))
-            {
-                return (rand.NextDouble()-0.5) * 2 * (max);
-            }
-            return rand.NextDouble() * (max - min) + min;
+            byte[] buf = new byte[8];
+            rand.NextBytes(buf);
+            double doubleRand = Convert.ToDouble(buf);
+            return doubleRand;
         }
     }
 }

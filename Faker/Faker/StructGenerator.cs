@@ -28,7 +28,9 @@ namespace FakerLib
                 var allConstructors = typeToGenerate.GetConstructors();
 
                 object res;
+
                 res = Activator.CreateInstance(typeToGenerate);
+
                 Array.Sort(allConstructors, new ConstructorComparer());
                 Array.Reverse(allConstructors);
 

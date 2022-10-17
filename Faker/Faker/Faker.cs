@@ -49,9 +49,9 @@ namespace FakerLib
             generators.Add(new StringGenerator());//ok
 
 
-            generators.Add(new ClassGenerator());
+            generators.Add(new ComplexGenerator());
             generators.Add(new ArrayGenerator());
-            generators.Add(new StructGenerator());
+            //generators.Add(new StructGenerator());
 
             context = new GeneratorContext(new Random(), this);
         }

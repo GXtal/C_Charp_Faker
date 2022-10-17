@@ -16,22 +16,18 @@
     public class Human
     {
         public int Age;
-        public int Id;
         public string Name;
-        private int pass;
-        public int Pass { get { return pass; } set { pass = value; } }
+        public Family MyFamily { get; set; }
 
-        public Human()
+        private Human()
         {
             Age = 0;
-            Id = 0;
             Name = "";
         }
 
         public Human(int age)
         {
             Age = age;
-            Id = 0;
             Name = "";
         }
     }

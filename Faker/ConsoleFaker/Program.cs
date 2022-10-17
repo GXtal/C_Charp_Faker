@@ -14,8 +14,8 @@ namespace ConsoleFaker
             short s = faker.Create<short>();
             long l = faker.Create<long>();
             string s2 = faker.Create<string>();*/
-            int[] ints = faker.Create<int[]>();
-            int[,] ints2 = faker.Create<int[,]>(); 
+
+            var a = faker.Create<Human>();
         }
     }
 }
