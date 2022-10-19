@@ -1,39 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FakerLib;
 
-namespace FakerLib
+namespace FakerSignExt
 {
-    public class DoubleGenerator : IValueGenerator
+    internal class ULongGenerator : IValueGenerator
     {
         public bool CanGenerate(Type type)
         {
-            if (type == typeof(double))
+            if (type == typeof(ulong))
             {
                 return true;
             }
             return false;
         }
-
         public object Generate(Type typeToGenerate, GeneratorContext context)
         {
             if (CanGenerate(typeToGenerate))
             {
-                return DoubleRandom(context.Random);
-                //return DoubleRandom(0, 10, context.Random);
+                return ULongRandom(context.Random);
             }
-
             return null;
-
         }
-
-        private double DoubleRandom(Random rand)
+        private ulong ULongRandom(Random rand)
         {
             byte[] buf = new byte[8];
             rand.NextBytes(buf);
-            return BitConverter.ToDouble(buf,0);
+            return BitConverter.ToUInt64(buf, 0);
         }
     }
 }
