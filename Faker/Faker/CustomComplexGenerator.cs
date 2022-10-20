@@ -138,12 +138,11 @@ namespace FakerLib
                     customProps = new Dictionary<PropertyInfo, IValueGenerator>();
                 }
 
-                var allFields = typeToGenerate.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.GetField);
-                var allProps = typeToGenerate.GetProperties(BindingFlags.NonPublic|BindingFlags.Public | BindingFlags.Instance);
+                
 
                 List<string> privates = new List<string>();
 
-                foreach (var field in allFields)
+                foreach (var field in customFields.Keys)
                 {
                     if (field.IsPrivate)
                     {
@@ -152,7 +151,7 @@ namespace FakerLib
 
                 }
 
-                foreach (var property in allProps)
+                foreach (var property in customProps.Keys)
                 {
                     if ((property.SetMethod != null) && (!property.SetMethod.IsPublic))
                     {
@@ -160,8 +159,8 @@ namespace FakerLib
                     }
                 }
 
-                allFields = typeToGenerate.GetFields();
-                allProps = typeToGenerate.GetProperties();
+                var allFields = typeToGenerate.GetFields();
+                var allProps = typeToGenerate.GetProperties();
                 var allConstructors = typeToGenerate.GetConstructors();
 
                 object res = null;
