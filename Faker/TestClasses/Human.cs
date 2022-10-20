@@ -17,7 +17,12 @@
     {
         public int Age;
         public string Name;
+        public string Description { get; set; }
         public Family MyFamily { get; set; }
+
+        private int _nya;
+        private int test { get; set; }
+        
 
         private Human()
         {
@@ -25,9 +30,9 @@
             Name = "";
         }
 
-        public Human(int age)
+        public Human(int Age)
         {
-            Age = age;
+            this.Age = Age;
             Name = "";
         }
     }
