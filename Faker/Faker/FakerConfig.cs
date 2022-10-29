@@ -29,7 +29,7 @@ namespace FakerLib
 
         public List<ConfigInfo> Config { get; set; }
         public void Add<TObj, TParam, TGenerator>(Expression<Func<TObj,TParam>> expression)
-            where TObj : class
+            //where TObj : class
             where TGenerator : IValueGenerator
         {
             Type objectType = typeof(TObj);

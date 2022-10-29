@@ -8,8 +8,9 @@ namespace ConsoleFaker
         static void Main(string[] args)
         {
 
-            /*Faker faker = new Faker();
-            float a = faker.Create<float>();
+            Faker faker = new Faker();
+            Childe childe = faker.Create<Childe>();
+            /*float a = faker.Create<float>();
             double b = faker.Create<double>();
             decimal n = faker.Create<decimal>();
             byte c = faker.Create<byte>();
@@ -21,18 +22,19 @@ namespace ConsoleFaker
             uint l = faker.Create<uint>();
             long f = faker.Create<long>();
             ulong m = faker.Create<ulong>();
-            string g = faker.Create<string>();*/
-            // Add the following using directive to your code file:  
-            // using System.Linq.Expressions;  
+            string g = faker.Create<string>();
+
 
             FakerConfig config = new FakerConfig();
-            config.Add<Human, string, NameGenerator>(human => human.Name) ;
-            config.Add<Human, int, IntGenerator>(human => human.Age);
-            config.Add<Human, string, StringGenerator>(human => human.Description);
-
-            Faker faker = new Faker(config);
+            config.Add<Human, string, NameGenerator>(human => human.Name);
+            config.Add<InHuman, string, NameGenerator>(inHuman => inHuman.Name);
+            Faker faker2 = new Faker(config);
 
             Human human = faker.Create<Human>();
+            Human human2 = faker2.Create<Human>();
+            InHuman inHuman = faker.Create<InHuman>();
+            InHuman inHuman2 = faker2.Create<InHuman>();*/
+
 
         }
     }

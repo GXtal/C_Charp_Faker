@@ -199,7 +199,7 @@ namespace FakerLib
                                 bool custom = false;
                                 foreach(var key in customFields.Keys)
                                 {
-                                    if(key.Name==param.Name)
+                                    if((key.Name==param.Name)&&(key.FieldType==param.ParameterType))
                                     {
                                         custom = true;
                                         preparParams.Add(customFields[key].Generate(key.FieldType,context));
@@ -210,7 +210,7 @@ namespace FakerLib
                                 {
                                     foreach (var key in customProps.Keys)
                                     {
-                                        if (key.Name == param.Name)
+                                        if ((key.Name == param.Name)&& (key.PropertyType == param.ParameterType))
                                         {
                                             custom = true;
                                             preparParams.Add(customProps[key].Generate(key.PropertyType, context));

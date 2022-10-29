@@ -49,9 +49,12 @@ namespace FakerLib
             generators.Add(new DoubleGenerator());//ok
             generators.Add(new CharGenerator());//ok
 
-            List<Assembly> a = new List<Assembly>();
+            List<Assembly> a = new List<Assembly>();            
+           
             a.Add(Assembly.LoadFile(AppContext.BaseDirectory + "FakerSignExt.dll"));
             a.Add(Assembly.LoadFile(AppContext.BaseDirectory + "FakerPointExt.dll"));
+            
+
 
             var types = a.SelectMany(i => i.GetTypes())
                 .Where(j => typeof(IValueGenerator).IsAssignableFrom(j) &&

@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleFaker", "ConsoleFake
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClasses", "TestClasses\TestClasses.csproj", "{E5BE17F8-FA86-4BAF-AFAC-970BCB602EB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakerSignExt", "FakerSignExt\FakerSignExt.csproj", "{C2B70184-B42F-4B24-A74C-8DFEABE859DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FakerSignExt", "FakerSignExt\FakerSignExt.csproj", "{C2B70184-B42F-4B24-A74C-8DFEABE859DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakerPointExt", "FakerPointExt\FakerPointExt.csproj", "{B1B7ABAF-4DC9-4FDD-B9FC-2546CB8104A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FakerPointExt", "FakerPointExt\FakerPointExt.csproj", "{B1B7ABAF-4DC9-4FDD-B9FC-2546CB8104A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{879E3E73-7041-4627-9A8B-7980AB83F621}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B1B7ABAF-4DC9-4FDD-B9FC-2546CB8104A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B7ABAF-4DC9-4FDD-B9FC-2546CB8104A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B7ABAF-4DC9-4FDD-B9FC-2546CB8104A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879E3E73-7041-4627-9A8B-7980AB83F621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879E3E73-7041-4627-9A8B-7980AB83F621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{879E3E73-7041-4627-9A8B-7980AB83F621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{879E3E73-7041-4627-9A8B-7980AB83F621}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
